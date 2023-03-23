@@ -1,9 +1,15 @@
 import { Cards } from '../Cards'
+import { Leftside } from '../Leftside/LeftSide'
+import { RightSide } from '../RightSide/RightSide'
 // import '../styles/styles.css'
+import '../../styles/styles.scss'
 export const Main=()=>{
     return(
-        <section className="page-container container-xl d-flex justify-content-between">
-            <section className="page__leftColumn">Left</section>
+        <main>
+            <section className="page-container container-xl d-flex justify-content-between">
+            <section className="page__leftColumn">
+                <Leftside/>
+            </section>
             <section className='page__centerColumn'>
             <div className="container-lg crayons-header ps-0">
             <ul className="nav tabContainer">
@@ -22,7 +28,12 @@ export const Main=()=>{
             <Cards/>
         </div>
             </section>
-            <section className='page__righColumn'>Right </section>
+            <section className='page__righColumn'>
+                <RightSide/>
+            </section>
         </section>
+        </main>
+        
+        
     )
 }

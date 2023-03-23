@@ -1,5 +1,5 @@
 @import "aside";
-@import 'footer';
+// @import 'footer';
 @import 'header';
 @import 'variables';
 @import 'card';
@@ -7,6 +7,10 @@
 @import 'navigation';
 @import 'listings';
 @import 'crearPost';
+//Variables
+$mobileBreakpoint: 767px;
+$tabletBreakpoint: 1023px;
+
 
 body{
     background-color: #f8f8f2;
@@ -23,7 +27,7 @@ body{
             }
 
             .page__centerColumn{
-                width: 50%;
+                width: 60%;
                 .tabContainer{
                     &:hover{
                         cursor: pointer;
@@ -32,7 +36,7 @@ body{
             }
 
             .page__rightColumn{
-                width: 25%;
+                width: 15%;
             }
         }
     }

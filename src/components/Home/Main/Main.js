@@ -3,8 +3,10 @@ import { Cards } from '../Cards'
 export const Main=()=>{
     return(
         <section className="page-container container-xl d-flex justify-content-between">
-            <section className="page__leftColumn">Left</section>
-            <section className='page__centerColumn'>
+            {/*  parte del menú */}
+            <section className="page__leftColumn">Left</section>  
+           
+            <section className='page__centerColumn'> {/*  parte de las cards articles */}
             <div className="container-lg crayons-header ps-0">
             <ul className="nav tabContainer">
                 <li className="nav-item">
@@ -22,7 +24,7 @@ export const Main=()=>{
             <Cards/>
         </div>
             </section>
-            <section className='page__righColumn'>Right </section>
+            <section className='page__righColumn'>Right </section> {/* */}
         </section>
     )
 }

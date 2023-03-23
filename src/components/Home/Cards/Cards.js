@@ -1,4 +1,4 @@
-import '../styles/styles.css'
+import '../styles/_card.scss'
 export const Cards=()=>{
     return(
         <article className='card m-3'>

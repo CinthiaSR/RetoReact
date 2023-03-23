@@ -1,5 +1,5 @@
-import { Cards } from '../Cards'
-import '../styles/styles.css'
+import { Cards } from '../../Cards'
+// import '../styles/styles.css'
 export const Main=()=>{
     return(
         <section className="page-container container-xl d-flex justify-content-between">

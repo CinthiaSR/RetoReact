@@ -1,4 +1,4 @@
-import { Cards } from '../../Cards'
+import { Cards } from '../Cards'
 // import '../styles/styles.css'
 export const Main=()=>{
     return(

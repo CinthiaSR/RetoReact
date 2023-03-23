@@ -28,7 +28,7 @@ export const Main=()=>{
             <Cards/>
         </div>
             </section>
-            <section className='page__righColumn'>
+            <section className='page__rightColumn'>
                 <RightSide/>
             </section>
         </section>

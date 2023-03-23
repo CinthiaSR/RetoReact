@@ -557,13 +557,13 @@ body main .page-container .page__leftColumn {
   width: 25%;
 }
 body main .page-container .page__centerColumn {
-  width: 60%;
+  width: 50%;
 }
 body main .page-container .page__centerColumn .tabContainer:hover {
   cursor: pointer;
 }
 body main .page-container .page__rightColumn {
-  width: 15%;
+  width: 25%;
 }
 
 @media (max-width: 1023px) {

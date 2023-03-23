@@ -27,7 +27,7 @@ body{
             }
 
             .page__centerColumn{
-                width: 60%;
+                width: 50%;
                 .tabContainer{
                     &:hover{
                         cursor: pointer;
@@ -36,7 +36,7 @@ body{
             }
 
             .page__rightColumn{
-                width: 15%;
+                width: 25%;
             }
         }
     }

@@ -50,4 +50,4 @@ export const Cards = () => {
     </article>
   );
 };
-
+export default Cards

@@ -1,4 +1,4 @@
-import { Cards } from '../Cards'
+import Cards from '../Cards/Cards'
 import { Leftside } from '../Leftside/LeftSide'
 import { RightSide } from '../RightSide/RightSide'
 // import '../styles/styles.css'

@@ -1,8 +1,10 @@
 // import { Header } from "../Home/Header/Header";
 // import { Footer } from "../Home/Footer/Footer";
+import {Cards} from '../Home/Cards/Cards'
 import  { ReactComponent as Heart} from '../images/iconos/corazon.svg'
 import { ReactComponent as Globito } from '../images/iconos/globito.svg'; 
 import { ReactComponent as Rectangulo } from '../images/iconos/rectangulo.svg'; 
+
 
 export const Articule = () => {
   return (
@@ -37,6 +39,7 @@ export const Articule = () => {
             </button>
           </div>
           <div id="columnaCentral"></div>
+          <Cards/>
         </div>
 
         <div id="main__column-3" className="">

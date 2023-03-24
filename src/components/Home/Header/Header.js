@@ -22,6 +22,8 @@ import about from '../../images/iconos/about.svg'
 import conduct from '../../images/iconos/code-of-conduct.svg'
 import privacy from '../../images/iconos/privacy-policy.svg'
 import term from '../../images/iconos/term.of-use.svg'
+import Post from '../../Post/Post'
+import { Link } from 'react-router-dom';
 
 
 import '../../styles/styles.scss'
@@ -106,9 +108,7 @@ export const Header=()=>{
                 <a href="./index.html">
                   <img src={logo} alt="logo"/>
                 </a>
-              </div>
-             
-              
+              </div>            
             </div>
           
             <div className="header__search ">
@@ -132,7 +132,11 @@ export const Header=()=>{
                 <img src={bell} alt="campana"/>
               </div>
               <div className="profilePicContainer">
-                <a href="./src/login.html" id="BtnCrearPost" className="btn btn-outline-primary" type="submit">Create Post</a>
+                <Link to={'/create-post'}> 
+                <a href="#" id="BtnCrearPost" className="btn btn-outline-primary" type="submit">Create Post</a>
+                </Link>
+                
+             
               </div>
             </div>
   

@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 // import './App.css';
 // import './components/styles/styles.css'
-import { BrowserRouter, Switch, Routes,Route } from 'react-router-dom';
+import { Routes,Route } from 'react-router-dom';
 import { Main } from "./components/Home/Main/Main";
 
 import Articule from "./components/Articule/Articule";
@@ -10,18 +10,12 @@ import Post from "./components/Post/Post";
 function App() {
   return (
   <div className = "App">
-  
-    
-   <Routes>
-      
+   <Routes>    
       
        <Route path="/" element={<Main/>} />
        <Route path="/create-post" element={<Post/>} />
         {/*aqui va el edit post, falta esa ruta */}
-       <Route path="/articles/:id" element={<Articule/>} />
-
-     
-    
+       <Route path="/articles/:id" element={<Articule/>} /> 
   
     </Routes> 
   </div>

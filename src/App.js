@@ -1,18 +1,24 @@
-
-// import { Main } from "./components/Home/Main/Main";
-import { Header } from "./components/Home/Header/Header";
-// import { Footer } from "./components/Home/Footer/Footer";
+import { Routes,Route } from 'react-router-dom';
+import { Main } from "./components/Home/Main/Main";
 import { Articule } from "./components/Articule/Articule";
+import Post from './components/Post/Post';
+
+// FALTA REVISAR CON ALAN
 function App() {
   return (
-    
-    <div className="App">
-      <Header/>
-      {/* <Main/>
-      <Footer/> */}
-      <Articule/>
-    </div>
+    <div className = "App">
+   <Routes>    
+      
+       <Route path="/" element={<Main/>} />
+       <Route path="/create-post" element={<Post/>} />
+        {/*aqui va el edit post, falta esa ruta */}
+       <Route path="/articles/:id" element={<Articule/>} /> 
+  
+    </Routes> 
+  </div>
   );
 }
 
 export default App;
+
+

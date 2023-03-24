@@ -1,6 +1,8 @@
 import { useEffect,useState } from 'react'
 import axios from 'axios'
 import { endpoints } from '../../services/endpoints'
+import { Header } from '../Header/Header'
+import { Footer } from '../Footer/Footer'
 import Cards from '../Cards/Cards'
 import { Leftside } from '../Leftside/LeftSide'
 import { RightSide } from '../RightSide/RightSide'
@@ -21,7 +23,8 @@ export const Main=()=>{
     },[])
 
     return(
-        <main>
+     
+        <main>   <Header/>
             <section className="page-container container-xl d-flex justify-content-between">
             <section className="page__leftColumn">
                 <Leftside/>
@@ -51,6 +54,7 @@ export const Main=()=>{
                 <RightSide/>
             </section>
         </section>
+        <Footer/>
         </main>
         
         

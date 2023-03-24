@@ -1,6 +1,6 @@
 import React from 'react'
 import "../styles/styles.scss"
-import "../images/iconos"
+/*import "../images/iconos" */
 
 const Post = () => {
   return (  //crear un formulario para crear un post, postear un articulo
@@ -66,4 +66,5 @@ const Post = () => {
 }
 
 export default Post
+
 

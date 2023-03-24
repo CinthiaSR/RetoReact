@@ -12,10 +12,10 @@ export const Main=()=>{
                 <li className="nav-item">
                     <a className="nav-link fs-5 fw-bold text-dark" aria-current="page" href="#">Relevant</a>
                 </li>
-                <li class="nav-item">
+                <li className="nav-item">
                      <a className="nav-link disabled fs-5" href="#">Latest</a>
                 </li>
-                <li class="nav-item">
+                <li className="nav-item">
                     <a className="nav-link disabled fs-5">Top</a>
                 </li>
             </ul>

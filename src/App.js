@@ -10,19 +10,20 @@ import Post from "./components/Post/Post";
 function App() {
   return (
   <div className = "App">
-    <Post/>
-   {/*comentado <Routes>
+  
+    
+   <Routes>
       
-      <Switch>
-       <Route path="/" element={Main} />
-       <Route path="/create-post" element={Post} />
-       <Route path="/edit-post/:id" exact Component={Edit_post} /> 
-       <Route path="/articles/:id" element={Articule} />
+      
+       <Route path="/" element={<Main/>} />
+       <Route path="/create-post" element={<Post/>} />
+        {/*aqui va el edit post, falta esa ruta */}
+       <Route path="/articles/:id" element={<Articule/>} />
 
-      </Switch> 
+     
     
   
-    </Routes> */}
+    </Routes> 
   </div>
   );
 }

@@ -1,9 +1,25 @@
+import { useEffect,useState } from 'react'
+import axios from 'axios'
+import { endpoints } from '../../services/endpoints'
 import Cards from '../Cards/Cards'
 import { Leftside } from '../Leftside/LeftSide'
 import { RightSide } from '../RightSide/RightSide'
-// import '../styles/styles.css'
 import '../../styles/styles.scss'
 export const Main=()=>{
+    const [postAll,setPostAll]=useState([])
+    const [isLoading,setIsLoading]=useState(true)
+    useEffect(()=>{
+        const fetch=async()=>{
+            const result=await axios.get(endpoints.getPost)
+            setPostAll(result.data)
+            console.log(result.data)
+            setIsLoading(false)
+
+        }
+        fetch()
+
+    },[])
+
     return(
         <main>
             <section className="page-container container-xl d-flex justify-content-between">
@@ -25,7 +41,10 @@ export const Main=()=>{
             </ul>
         </div>
         <div id="articles" className="articles">
-            <Cards/>
+            {
+                isLoading ? <span>Cargando...</span>: <Cards postdata={postAll}/>
+            }
+            
         </div>
             </section>
             <section className='page__rightColumn'>

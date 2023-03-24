@@ -2,33 +2,32 @@
 import like from '../../images/iconos/like.svg'
 import comment from '../../images/iconos/comment.svg'
 import save from '../../images/iconos/save.svg'
-export const Cards = () => {
+export const Cards = ({postdata}) => {
+
   return (
-    <article className="card m-3">
-      <img src="" className="card-img-top" alt="" />
+    postdata.map((post)=>{
+      return(
+         <article className="card m-3">
+      <img src={post.imageURL} className="card-img-top" alt="" />
       <div className="card-body">
-        <div className="card__userDetails">
-          <img src="./images/vincent.webp" alt="" />
+        <div className="card__userDetails d-flex align-items-center mb-2">
+          <a href='#'></a>
+          <ul className='d-flexflex-wrap p-0 ms-4'>
+
+          </ul>
           <div className="d-flex flex-column">
-            <p className="fw-bold">Alfred</p>
+          <img src={post.imageURL} alt="" />
+            <p className="fw-bold">{post.author.name}</p>
             <p className="time">27 feb 2023</p>
           </div>
         </div>
-        <a href="#">Articule</a>
-        <h3 className="card-title ms-3">title</h3>
-        <ul className="d-flex flex-wrap p-0 ms-4">
-          <li>
-            <a href="#">#Webdev</a>
-          </li>
-          <li>
-            <a href="#">#Beginners</a>
-          </li>
-        </ul>
+        {/* <a href="#">Articule</a> */}
+        <h3 className="card-title ms-3">{post.title}</h3>
         <div className="card__buttons d-flex ms-4">
           {/* comienza miguel*/}
           <div className="card border-0">
             <div className="card-body">
-              <p className="card-text">Contenido</p>
+              {/* <p className="card-text">{post.content}</p> */}
               <div className="interactions d-flex">
                 <div className="reactions d-flex me-4">
                   <img src={like} alt="Like Icon" />
@@ -37,17 +36,25 @@ export const Cards = () => {
                 <div className="comments d-flex">
                   <img src={comment} alt="Comment Icon" />
                   <p>Add comment</p>
-                </div>
-              </div>
-              <div className="tools d-flex">
-                <p>tiempo</p>
+                </div>  
+                <div className="tools d-flex">
                 <img src={save} alt="Save Icon" />
+                <p>tiempo</p>
               </div>
+              </div>
+            
             </div>
           </div>
         </div>
+        <ul className="d-flex flex-wrap p-0 ms-4">
+          <li><a href="#">#Webdev</a></li>
+          <li><a href="#">#Beginners</a></li>
+        </ul>
       </div>
     </article>
+      )
+    })
+   
   );
 };
 export default Cards

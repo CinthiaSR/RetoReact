@@ -1,4 +1,5 @@
-import "../styles/_card.scss";
+import "../../styles/_cards.scss"; 
+
 export const Cards = () => {
   return (
     <article className="card m-3">
@@ -25,7 +26,7 @@ export const Cards = () => {
           {/* comienza miguel*/}
           <div className="card border-0">
             <div className="card-body">
-              <p className="card-text">{post.content}</p>
+              <p className="card-text">HOLA 2</p>
               <div className="interactions d-flex">
                 <div className="reactions d-flex me-4">
                   <img src="../Assets/iconos/like.svg" alt="Like Icon" />
@@ -37,13 +38,14 @@ export const Cards = () => {
                 </div>
               </div>
               <div className="tools d-flex">
-                <p>{difTiempo}</p>
+                <p>HOLA MUNDO</p>
                 <img src="../Assets/iconos/save.svg" alt="Save Icon" />
               </div>
             </div>
           </div>
         </div>
       </div>
+    {/* aquí iba content*/}
     </article>
   );
 };

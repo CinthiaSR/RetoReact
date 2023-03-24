@@ -73,7 +73,7 @@ const Articule = () => {
         </div>
         </div>
      </div>
-               {/* y esto...*/}
+              
 
 
   )  

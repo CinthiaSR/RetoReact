@@ -1,5 +1,6 @@
 import React from 'react'
 import "../styles/styles.scss"
+import "../images/iconos"
 
 const Post = () => {
   return (  //crear un formulario para crear un post, postear un articulo
@@ -22,9 +23,10 @@ const Post = () => {
                         </div>
                     </div>
                     <div className="form-floating w-100 px-0 mb-3">
-              <textarea id="title" name="title" className="form-control border-0 fs-3 fw-bold pt-5" style={{ height: '90px' }} placeholder="New post title here..." />
-              <label htmlFor="floatingTextarea"><p className="fs-3 fw-bold">New post title here...</p></label>
-              <small className="px-3">Add up to 4 tags . . .</small>
+                         <textarea id="title" name="title" className="form-control border-0 fs-3 fw-bold pt-5" style={{ height: '90px' }} placeholder="New post title here..." />
+                         <label htmlFor="floatingTextarea"><p className="fs-3 fw-bold">New post title here...</p></label>
+                         <small className="px-3">Add up to 4 tags . . .</small>
+                         </div>
             </div>
             <div className="bg-light">
               <ul className="list-group list-group-horizontal px-3 bg-light py-2">
@@ -38,9 +40,9 @@ const Post = () => {
               </ul>
             </div>
             <div className="form-floating w-100 h-100 px-0 mb-3 d-flex flex-column align-content-end">
-            <textarea id="content" name="content" class="form-control border-0 fs-4 pt-5" style={{height: '45vh'}} placeholder="New post title here..."></textarea>
+                <textarea id="content" name="content" class="form-control border-0 fs-4 pt-5" style={{height: '45vh'}} placeholder="New post title here..."></textarea>
                 <input type="text" value="63ffa9357217497eb9b64bd4" name="author" id="author" className="form-control"/>
-                <div className=''="bg-light mt-2">
+                <div className="bg-light mt-2">
                   <ul className="list-group list-group-horizontal px-3 bg-light py-2">
                     <button id="Publish" name="Publish" type="button" className="btn btn-primary fw-bold">Publish</button>
                     <li className="list-group-item border-0 bg-light">Save draft</li>
@@ -49,16 +51,16 @@ const Post = () => {
                   </ul>
                 </div>
 
-                </div>
+            </div>
 
             </div>
 
         </form>
-     {/*   <div id="main__column-3P" class="main__column-3P d-flex flex-column justify-content-center align-items-center mx-0">
+        <div id="main__column-3P" class="main__column-3P d-flex flex-column justify-content-center align-items-center mx-0">
                 <h4 className="column-H4" >Writing a Great Post Title</h4>
-                <p className="column-P1" className="lh-sm">Think of your post title as a super short (but compelling!) description — like an overview of the actual post in one short sentence.</p>
-                <p className="column-P2" className="lh-sm">Use keywords where appropriate to help ensure people can find your post by search.</p>
-</div> */}
+                <p className="column-P1 lh-sm">Think of your post title as a super short (but compelling!) description — like an overview of the actual post in one short sentence.</p>
+                <p className="column-P2 lh-sm">Use keywords where appropriate to help ensure people can find your post by search.</p>
+</div> 
     </div>
   )
 }

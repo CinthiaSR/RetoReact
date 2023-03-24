@@ -1,5 +1,13 @@
 import React from "react";
 import "../styles/styles.scss";
+import {ReactComponent as Be} from '../images/iconos/be.svg'
+import {ReactComponent as Icon2} from '../images/iconos/icon2.svg'
+import {ReactComponent as Icon3} from '../images/iconos/icon3.svg'
+import {ReactComponent as Icon4} from '../images/iconos/icon4.svg'
+import {ReactComponent as Icon5} from '../images/iconos/icon5.svg'
+import {ReactComponent as Icon6} from '../images/iconos/icon6.svg'
+import {ReactComponent as Icon7} from '../images/iconos/icon7.svg'
+
 /*import "../images/iconos" */
 // INSERTAR LOS POSTS CHECAR VIDEO DE TODO LIST
 
@@ -12,8 +20,7 @@ const Post = () => {
         className="formPost container-fluid d-flex justify-content-center mx-0"
       >
         <div className="cardMainPost w-100 py-3">
-          <div className="ca
-          bezera w-100">
+          <div className="cabezera w-100">
             <div className="d-flex justify-content-start px-0">
               <p className="ps-3">
                 <a
@@ -62,26 +69,19 @@ const Post = () => {
             {/* div que no iba */}
             <div className="bg-light">
               <ul className="list-group list-group-horizontal px-3 bg-light py-2">
-                <li className="list-group-item border-0 px-0 bg-light">
-                  <object className="me-2" data="../Assets/iconos/be.svg" />
+                <li className="list-group-item border-0 px-0 bg-light"><Be/>
                 </li>
-                <li className="list-group-item border-0 bg-light">
-                  <object className="me-2" data="../Assets/iconos/icon2.svg" />
+                <li className="list-group-item border-0 bg-light"><Icon2/>
                 </li>
-                <li className="list-group-item border-0 px-0 bg-light">
-                  <object className="me-2" data="../Assets/iconos/icon3.svg" />
+                <li className="list-group-item border-0 px-0 bg-light"><Icon3/>
                 </li>
-                <li className="list-group-item border-0 bg-light">
-                  <object className="me-2" data="../Assets/iconos/icon4.svg" />
+                <li className="list-group-item border-0 bg-light"><Icon4/>
                 </li>
-                <li className="list-group-item border-0 px-0 bg-light">
-                  <object className="me-2" data="../Assets/iconos/icon5.svg" />
+                <li className="list-group-item border-0 px-0 bg-light"><Icon5/>
                 </li>
-                <li className="list-group-item border-0 bg-light w-75">
-                  <object className="me-2" data="../Assets/iconos/icon6.svg" />
+                <li className="list-group-item border-0 bg-light w-75"><Icon6/>
                 </li>
-                <li className="list-group-item border-0 bg-light">
-                  <object className="me-2" data="../Assets/iconos/icon7.svg" />
+                <li className="list-group-item border-0 bg-light"><Icon7/>
                 </li>
               </ul>
             </div>
@@ -114,10 +114,10 @@ const Post = () => {
                     Save draft
                   </li>
                   <li className="list-group-item border-0 px-0 bg-light ps-2">
-                    <object
+                    {/* <object
                       class="me-2"
                       data="../Assets/iconos/icon8.svg"
-                    ></object>
+                    ></object> */}
                   </li>
                   <li className="list-group-item border-0 bg-light">
                     Revert new changes

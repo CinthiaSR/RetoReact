@@ -12,7 +12,7 @@ function App() {
        <Route path="/" element={<Main/>} />
        <Route path="/create-post" element={<Post/>} />
         {/*aqui va el edit post, falta esa ruta */}
-       <Route path="/articles/:id" element={<Articule/>} /> 
+       <Route path="/article/:id" element={<Articule/>} /> 
   
     </Routes> 
   </div>

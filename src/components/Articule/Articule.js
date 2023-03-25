@@ -4,9 +4,41 @@ import {Cards} from '../Home/Cards/Cards'
 import  { ReactComponent as Heart} from '../images/iconos/corazon.svg'
 import { ReactComponent as Globito } from '../images/iconos/globito.svg'; 
 import { ReactComponent as Rectangulo } from '../images/iconos/rectangulo.svg'; 
+import { endpoints } from "../services/endpoints";
+import axios from "axios";
+import { useEffect, useState, useParams } from "react";
+
 
 
 export const Articule = () => {
+    const [post, setPost] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
+
+    // leer id de la ruta
+    const params = useParams();
+    const {id} = params;
+
+    useEffect(() => {
+        // Crear funcion para traer los datos del API
+        const fetchData = async () => {
+            try {
+                const endpointURL = `${endpoints.getPost}/${id}`;
+                const post = await axios.get(endpointURL);
+                console.log("🚀 ~ file: ProductDetails.js:20 ~ fetchData ~ product:", post);
+                setPost(post.data)
+            }
+            catch(error) {
+                alert(error);
+            }
+            finally{
+                setIsLoading(false);
+            }
+        }
+
+        fetchData();
+
+    },[]);
+    
   return (
    <>
    <Header/>

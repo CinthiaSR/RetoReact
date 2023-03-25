@@ -4,7 +4,7 @@ import { endpoints } from '../../services/endpoints'
 import { Header } from '../Header/Header'
 import { Footer } from '../Footer/Footer'
 import Cards from '../Cards/Cards'
-import { Leftside } from '../Leftside/LeftSide'
+import { Leftside } from '../LeftSide/LeftSide'
 import { RightSide } from '../RightSide/RightSide'
 import '../../styles/styles.scss'
 export const Main=()=>{
@@ -27,7 +27,7 @@ export const Main=()=>{
         <main>   <Header/>
             <section className="page-container container-xl d-flex justify-content-between">
             <section className="page__leftColumn">
-                <Leftside/>
+                <Leftside/> 
             </section>
             <section className='page__centerColumn'>
             <div className="container-lg crayons-header ps-0">

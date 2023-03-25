@@ -21,7 +21,7 @@ export const Cards = ({ postdata }) => {
             </div>
           </div>
           {/* <a href="#">Articule</a> */}
-          <Link to={`/article/${post.title}`}>
+          <Link to={`/article/${post._id}`}>
              <h3 className="card-title ms-3">{post.title}</h3>
           </Link>
           <div className="card__buttons d-flex ms-4">

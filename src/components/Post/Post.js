@@ -7,17 +7,63 @@ import {ReactComponent as Icon4} from '../images/iconos/icon4.svg'
 import {ReactComponent as Icon5} from '../images/iconos/icon5.svg'
 import {ReactComponent as Icon6} from '../images/iconos/icon6.svg'
 import {ReactComponent as Icon7} from '../images/iconos/icon7.svg'
+import { Header } from "../Home/Header/Header";
+import { Footer } from "../Home/Footer/Footer";
+import axios from "axios";
+import { useState,useEffect } from "react";
+import { endpoints } from "../services/endpoints";
 
 /*import "../images/iconos" */
 // INSERTAR LOS POSTS CHECAR VIDEO DE TODO LIST
 
 const Post = () => {
+
+  const [formValues, setFormValues] = useState({
+    imageURL: '', // mandatorio
+    title: '',// mandatorio
+    content: '', // mandatorio
+    author: '63ffa9357217497eb9b64bd4',// mandatorio
+})
+
+const [registerPost, setRegisterPost] = useState([])
+
+const onFormInputChange=(event)=>{
+  const inputID= event.target.id
+  const inputValue=event.target.value
+
+  setFormValues({
+    ...formValues,
+    [inputID]:inputValue
+  })
+}
+
+
+// const onFormSubmit=(event)=>{
+//   event.preventDefault();
+//   const newPost={...formValues}
+//   const newListPost=[...registerPost,newPost]
+//   setRegisterPost(newListPost)
+
+// }
+const guardarCallback=async(newAllPost)=>{
+  try {
+    const addPost=await axios.post(endpoints.getPost,{
+
+    })
+  } catch (error) {
+    
+  }
+}
+
   return (
-    //crear un formulario para crear un post, postear un articulo
+    <>
+    <Header/>
     <div className="main__cards mt-o d-flex w-100 vh-100">
       <form
         id="formPost"
         className="formPost container-fluid d-flex justify-content-center mx-0"
+        // onSubmit={onFormSubmit}
+        callBack={guardarCallback}
       >
         <div className="cardMainPost w-100 py-3">
           <div className="cabezera w-100">
@@ -44,6 +90,8 @@ const Post = () => {
                       <input
                         name="imageURL"
                         id="imageURL"
+                        value={formValues.imageURL}
+                        onChange={onFormInputChange}
                         type="text"
                         className="form-control"
                         placeholder="URL de la imágen"
@@ -57,6 +105,8 @@ const Post = () => {
               <textarea
                 id="title"
                 name="title"
+                value={formValues.title}
+                onChange={onFormInputChange}
                 className="form-control border-0 fs-3 fw-bold pt-5"
                 style={{ height: "90px" }}
                 placeholder="New post title here..."
@@ -89,12 +139,14 @@ const Post = () => {
               <textarea
                 id="content"
                 name="content"
+                value={formValues.content}
+                onChange={onFormInputChange}
                 className="form-control border-0 fs-4 pt-5"
                 style={{ height: "45vh" }}
                 placeholder="New post title here..."
               ></textarea>
               <input
-                type="text"
+                type="hidden"
                 value="63ffa9357217497eb9b64bd4"
                 name="author"
                 id="author"
@@ -105,7 +157,7 @@ const Post = () => {
                   <button
                     id="Publish"
                     name="Publish"
-                    type="button"
+                    type="submit"
                     className="btn btn-primary fw-bold"
                   >
                     Publish
@@ -144,6 +196,8 @@ const Post = () => {
         </p>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

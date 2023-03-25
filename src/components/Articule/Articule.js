@@ -6,7 +6,9 @@ import { ReactComponent as Globito } from '../images/iconos/globito.svg';
 import { ReactComponent as Rectangulo } from '../images/iconos/rectangulo.svg'; 
 import { endpoints } from "../services/endpoints";
 import axios from "axios";
-import { useEffect, useState, useParams } from "react";
+import { useEffect, useState} from "react";
+import {useParams} from 'react-router-dom';
+
 
 
 

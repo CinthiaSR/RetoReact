@@ -4,7 +4,7 @@ import { endpoints } from '../../services/endpoints'
 import { Header } from '../Header/Header'
 import { Footer } from '../Footer/Footer'
 import Cards from '../Cards/Cards'
-import { Leftside } from '../LeftSide/LeftSide'
+import {Leftside} from '../Leftside/LeftSide'
 import { RightSide } from '../RightSide/RightSide'
 import '../../styles/styles.scss'
 export const Main=()=>{

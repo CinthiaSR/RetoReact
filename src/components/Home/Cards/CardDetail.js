@@ -1,9 +1,10 @@
 
 export const CardDetail=({post})=>{
   console.log(post)
+  console.log('algo',post.title)
   
- return post.map((data)=>{
-  const {imageURL,title, content, author}=data
+//  return post.map((data)=>{
+  const {imageURL,title, content, author}=post
     return(    
         <div className="card container-fluid px-0 ">
         <img src={imageURL} className="card-img-top" alt="Cover image for Weekly web development resources #124" />
@@ -29,5 +30,5 @@ export const CardDetail=({post})=>{
         </div>
       </div>
     )
- })
+//  })
 }

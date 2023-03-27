@@ -10,9 +10,9 @@ import { ReactComponent as Globito } from "../images/iconos/globito.svg";
 import { ReactComponent as Rectangulo } from "../images/iconos/rectangulo.svg";
 
 export const Articule = () => {
-  const [post, setPost] = useState({});
+  const [post, setPost] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [deletePost, setDetelePost] = useState({});
+  const [deletePost, setDetelePost] = useState([]);
 
   // leer id de la ruta
   const params = useParams();
@@ -28,7 +28,7 @@ export const Articule = () => {
           "🚀 ~ file: ProductDetails.js:20 ~ fetchData ~ product:",
           post
         );
-        setPost(post.data);
+        setPost(post.data[0]);
       } catch (error) {
         alert(error);
       } finally {
@@ -37,7 +37,7 @@ export const Articule = () => {
     };
 
     fetchData();
-  }, []);
+  }, [id]);
 
   const onClickDeletePost = (event) => {
     event.preventDefault();

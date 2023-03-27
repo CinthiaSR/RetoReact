@@ -1,59 +1,77 @@
-import { Header } from "../Home/Header/Header";
-import { Footer } from "../Home/Footer/Footer";
-import {Cards} from '../Home/Cards/Cards'
-import  { ReactComponent as Heart} from '../images/iconos/corazon.svg'
-import { ReactComponent as Globito } from '../images/iconos/globito.svg'; 
-import { ReactComponent as Rectangulo } from '../images/iconos/rectangulo.svg'; 
 import { endpoints } from "../services/endpoints";
 import axios from "axios";
-import { useEffect, useState} from "react";
-import {useParams} from 'react-router-dom';
-
-
-
+import { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import { Header } from "../Home/Header/Header";
+import { Footer } from "../Home/Footer/Footer";
+import { CardDetail } from "../Home/Cards/CardDetail";
+import { ReactComponent as Heart } from "../images/iconos/corazon.svg";
+import { ReactComponent as Globito } from "../images/iconos/globito.svg";
+import { ReactComponent as Rectangulo } from "../images/iconos/rectangulo.svg";
 
 export const Articule = () => {
-    const [post, setPost] = useState({});
-    const [isLoading, setIsLoading] = useState(true);
+  const [post, setPost] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+  const [deletePost, setDetelePost] = useState({});
 
-    // leer id de la ruta
-    const params = useParams();
-    const {id} = params;
+  // leer id de la ruta
+  const params = useParams();
+  const { id } = params;
 
-    useEffect(() => {
-        // Crear funcion para traer los datos del API
-        const fetchData = async () => {
-            try {
-                const endpointURL = `${endpoints.getPost}/${id}`;
-                const post = await axios.get(endpointURL);
-                console.log("🚀 ~ file: ProductDetails.js:20 ~ fetchData ~ product:", post);
-                setPost(post.data)
-            }
-            catch(error) {
-                alert(error);
-            }
-            finally{
-                setIsLoading(false);
-            }
-        }
+  useEffect(() => {
+    // Crear funcion para traer los datos del API
+    const fetchData = async () => {
+      try {
+        const endpointURL = `${endpoints.getPost}/${id}`;
+        const post = await axios.get(endpointURL);
+        console.log(
+          "🚀 ~ file: ProductDetails.js:20 ~ fetchData ~ product:",
+          post
+        );
+        setPost(post.data);
+      } catch (error) {
+        alert(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
-        fetchData();
+    fetchData();
+  }, []);
 
-    },[]);
-    
+  const onClickDeletePost = (event) => {
+    event.preventDefault();
+    try {
+      const fetchData = async () => {
+        const endpointURL = `${endpoints.dellPost}/${id}`;
+        const post = await axios.delete(endpointURL);
+        console.log("eliminado:", post);
+        setDetelePost(post);
+        alert("Eliminado correctamente");
+      };
+      fetchData();
+    } catch (error) {
+      alert(`error al eliminar post:${id}`);
+    }
+  };
+  console.log(deletePost);
+
   return (
-   <>
-   <Header/>
+    <>
+      <Header />
       <div className="main__cards">
         <div id="barra" className="container-fluid">
           <ul className="mx-5">
-            <li className="nav-item d-flex align-items-center p-2"><Heart/>
+            <li className="nav-item d-flex align-items-center p-2">
+              <Heart />
               <small className="text-muted">15</small>
             </li>
-            <li className="nav-item d-flex align-items-center p-2"><Globito/>
+            <li className="nav-item d-flex align-items-center p-2">
+              <Globito />
               <small className="text-muted">4</small>
             </li>
-            <li className="nav-item d-flex align-items-center p-2"><Rectangulo/>
+            <li className="nav-item d-flex align-items-center p-2">
+              <Rectangulo />
               <small className="text-muted">20</small>
             </li>
             <li id="tresPuntos" className="d-flex align-items-center">
@@ -63,17 +81,26 @@ export const Articule = () => {
         </div>
 
         <div className="cards__contenido d-flex flex-column">
-          <div className="d-flex justify-content-end mt-2 py-0">
+          <div className="iconos d-flex p-2 justify-content-end">
             <button id="editarPost" className="btn text-dark py-0">
-              <a className="btn btn-light text-dark py-0" type="button">
-                Edit
-              </a>
+              <Link to={`/editpost/${id}`}>
+                <a className="btn btn-light text-dark py-0" type="button">
+                  Edit
+                </a>
+              </Link>
             </button>
-            <button id="eliminarPost" className="btn text-dark" type="submit">
+            <button
+              id="eliminarPost"
+              className="btn text-dark"
+              type="submit"
+              onClick={onClickDeletePost}
+            >
               Delete
             </button>
           </div>
-          <div id="columnaCentral"></div>
+          <div id="card container-fluid px-0">
+            {isLoading ? <span>Cargando...</span> : <CardDetail post={post} />}
+          </div>
           {/* <Cards/> */}
         </div>
 
@@ -139,7 +166,7 @@ export const Articule = () => {
           </article>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

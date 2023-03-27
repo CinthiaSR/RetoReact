@@ -13,19 +13,17 @@ import axios from "axios";
 import { useState,useEffect } from "react";
 import { endpoints } from "../services/endpoints";
 
-/*import "../images/iconos" */
-// INSERTAR LOS POSTS CHECAR VIDEO DE TODO LIST
 
 const Post = () => {
 
-  const [formValues, setFormValues] = useState({
+const [formValues, setFormValues] = useState({
     imageURL: '', // mandatorio
     title: '',// mandatorio
     content: '', // mandatorio
     author: '63ffa9357217497eb9b64bd4',// mandatorio
 })
 
-const [registerPost, setRegisterPost] = useState([])
+const [isLoading,setIsLoading]=useState(true)
 
 const onFormInputChange=(event)=>{
   const inputID= event.target.id
@@ -37,33 +35,52 @@ const onFormInputChange=(event)=>{
   })
 }
 
+const onFormSubmit=(event)=>{
+  event.preventDefault();
+  guardarCallback()
 
-// const onFormSubmit=(event)=>{
-//   event.preventDefault();
-//   const newPost={...formValues}
-//   const newListPost=[...registerPost,newPost]
-//   setRegisterPost(newListPost)
-
-// }
-const guardarCallback=async(newAllPost)=>{
+}
+const importantData=(formValues.imageURL!==''&& 
+                     formValues.title!==''&& 
+                     formValues.content!=='')
+const guardarCallback=async()=>{
   try {
-    const addPost=await axios.post(endpoints.getPost,{
+  
+    if(importantData){
+      console.log('lleno')
+      const addPost=await axios.post(endpoints.createPost,formValues);  
+      setFormValues(addPost)
+      setIsLoading(false)
+      resetForm()
+      console.log(addPost)
+    }else{
+      alert('Todos los campos son requeridos')
+    }
+    console.log(formValues)
 
-    })
-  } catch (error) {
     
+  } catch (error) {
+    console.log("Error in Petition");
   }
+}
+const resetForm = () => {
+  setFormValues({
+    imageURL: '', // mandatorio
+    title: '',// mandatorio
+    content: ''
+  })
 }
 
   return (
     <>
     <Header/>
     <div className="main__cards mt-o d-flex w-100 vh-100">
+     
       <form
         id="formPost"
         className="formPost container-fluid d-flex justify-content-center mx-0"
-        // onSubmit={onFormSubmit}
-        callBack={guardarCallback}
+        onSubmit={onFormSubmit}
+        // callBack={guardarCallback}
       >
         <div className="cardMainPost w-100 py-3">
           <div className="cabezera w-100">

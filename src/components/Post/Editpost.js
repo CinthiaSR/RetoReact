@@ -235,4 +235,4 @@ const Editpost = () => {
 
 };
 
-export default withRouter(Editpost);
+export default Editpost;
